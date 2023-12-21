@@ -59,14 +59,15 @@ function generatePassword() {
   var capitalLetterString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   var numberString = '0123456789'
   var specialCharString = '`~!@#$%^&*()-_+={}[]|\;:"<>/?'
-  var letterArray = Array.from(letterString);
-  var capitalLetterArray = Array.from(capitalLetterString);
-  var numberArray = Array.from(numberString);
-  var specialCharArray = Array.from(specialCharString);
-  var userChoiceArr = []
+  // var letterArray = Array.from(letterString);
+  // var capitalLetterArray = Array.from(capitalLetterString);
+  // var numberArray = Array.from(numberString);
+  // var specialCharArray = Array.from(specialCharString);
+  // var userChoiceArr = []
+  var userChoiceStr = ''
 
   var passLength = prompt('How many characters would you like the password to be?')
-  
+
   if (!passLength) {
     alert('Please enter a length.');
     return generatePassword()
@@ -82,26 +83,30 @@ function generatePassword() {
     return generatePassword()
   }
   if (lowerCase) {
-    userChoiceArr = userChoiceArr.concat(letterArray);
+    // userChoiceArr = userChoiceArr.concat(letterArray);
+    userChoiceStr += letterString
   }
   if (upperCase) {
-    userChoiceArr = userChoiceArr.concat(capitalLetterArray);
+    // userChoiceArr = userChoiceArr.concat(capitalLetterArray);
+    userChoiceStr += capitalLetterString
   }
   if (numbers) {
-    userChoiceArr = userChoiceArr.concat(numberArray);
+    // userChoiceArr = userChoiceArr.concat(numberArray);
+    userChoiceStr += numberString
   }
   if (specialCharacters) {
-    userChoiceArr = userChoiceArr.concat(specialCharArray);
+    // userChoiceArr = userChoiceArr.concat(specialCharArray);
+    userChoiceStr += specialCharString
   }
   console.log(passLength)
-  console.log(userChoiceArr)
+  console.log(userChoiceStr)
   var passString = ''
   for (var i = 0; i < passLength; i++) {
-    var randomNumber = Math.floor(Math.random() * userChoiceArr.length);
+    var randomNumber = Math.floor(Math.random() * userChoiceStr.length);
     console.log(i);
     console.log(randomNumber);
-    console.log(userChoiceArr[randomNumber]);
-    passString += userChoiceArr[randomNumber];
+    console.log(userChoiceStr[randomNumber]);
+    passString += userChoiceStr[randomNumber];
   }
   console.log(passString)
   return passString
