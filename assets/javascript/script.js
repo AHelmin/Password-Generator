@@ -17,13 +17,6 @@ generateBtn.addEventListener("click", writePassword);
 
 //prompt(), alert(), confirm() 
 
-// var length = prompt('How long do you want your password to be?');//allows user to input
-// var lowercase = confirm('Do you want to include lower case letters?'); //let's user give yes or no answer
-
-// var randomNumber = Math.floor(Math.random() * Max);
-
-// function generatePassword() {}
-
 //will need random number generator or possibly two for the addition of lower case
 // var randomNumber = Math.floor(Math.random() * Max);
 
@@ -68,16 +61,17 @@ function generatePassword() {
 
   var passLength = prompt('How many characters would you like the password to be?')
 
-  if (!passLength) {
+  if (!passLength || passLength == 0) {
     alert('Please enter a length.');
     return generatePassword()
   }
+
   var lowerCase = confirm('Would you like to use lower case letters?');
   var upperCase = confirm('Would you like to use upper case letters?');
   var numbers = confirm('Would you like to use numbers?');
   var specialCharacters = confirm('Would you like to use special characters?');
 
- 
+
   if (lowerCase === false && upperCase === false && numbers === false && specialCharacters === false) {
     alert('Please enter a character type.');
     return generatePassword()
@@ -110,6 +104,6 @@ function generatePassword() {
   }
   console.log(passString)
   return passString
-  
+
 }
 
