@@ -59,11 +59,12 @@ function generatePassword() {
   // var userChoiceArr = []
   var userChoiceStr = ''
 
-  var passLength = prompt('How many characters would you like the password to be?')
+  var lengthInput = prompt('How many characters would you like the password to be?');
+  var passLength = parseInt(lengthInput)
 
-  if (!passLength || passLength == 0) {
-    alert('Please enter a length.');
-    return generatePassword()
+  if (!passLength || passLength === 0 || !Number.isInteger(passLength) || passLength < 8 || passLength > 128) {
+    alert('Please enter a number between 8 and 128 characters.');
+    return generatePassword() 
   }
 
   var lowerCase = confirm('Would you like to use lower case letters?');
