@@ -18,7 +18,7 @@ https://ahelmin.github.io/Password-Generator/
 
 ## Credits
 
-Thanks goes to the University of Minnesota and Edx Bootcamp for providing the assistance and starter code needed to complete this project.
+Thanks goes to the University of Minnesota and Edx Bootcamp for providing the assistance and starter code needed to complete this project. A special thanks to Pete Maynard for assisting me with some of the conditional logic.
 
 ## License
 

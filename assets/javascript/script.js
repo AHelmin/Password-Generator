@@ -15,18 +15,18 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   //creates strings of character options
-  var letterString = 'abcdefghijklmnopqrstuvwxyz'
-  var capitalLetterString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var numberString = '0123456789'
-  var specialCharString = '`~!@#$%^&*()-_+={}[]|\;:"<>/?'
-  var userChoiceStr = ''
+  var letterString = 'abcdefghijklmnopqrstuvwxyz';
+  var capitalLetterString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var numberString = '0123456789';
+  var specialCharString = '`~!@#$%^&*()-_+={}[]|\;:"<>/?';
+  var userChoiceStr = '';
 //prompts user to input a password length, second line converts string to number
   var lengthInput = prompt('How many characters would you like the password to be?');
-  var passLength = parseInt(lengthInput)
+  var passLength = parseInt(lengthInput);
 //checks for conditions, if no pass then alert to put in a number within the length requuirement and sends back to beginning of function
-  if (!passLength || passLength === 0 || !Number.isInteger(passLength) || passLength < 8 || passLength > 128) {
+  if (!passLength || passLength < 8 || passLength > 128) {
     alert('Please enter a number between 8 and 128 characters.');
-    return generatePassword() 
+    return generatePassword();
   }
 //prompts user to choose what type of characters they would like
   var lowerCase = confirm('Would you like to use lower case letters?');
@@ -37,7 +37,7 @@ function generatePassword() {
 //checks to make sure that at least one of the characters were chosen, if not alerts to choose one type and sends back to start
   if (lowerCase === false && upperCase === false && numbers === false && specialCharacters === false) {
     alert('Please choose at least one character type.');
-    return generatePassword()
+    return generatePassword();
   }
   //builds the full password strings based on user choice
   if (lowerCase) {
@@ -53,8 +53,6 @@ function generatePassword() {
     userChoiceStr += specialCharString
   }
   //builds the password with the help of random number generation
-  console.log(passLength)
-  console.log(userChoiceStr)
   var passString = ''
   for (var i = 0; i < passLength; i++) {
     var randomNumber = Math.floor(Math.random() * userChoiceStr.length);
