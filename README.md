@@ -1,4 +1,4 @@
-# Portfolio
+# Password-Generator
 
 ## Description
 
@@ -10,7 +10,7 @@ Installation is not required. The webpage is accessible from any web browser app
 
 ## Usage
 
-To use this service simply navigate to the website address below and press the "Generate Password" button to begin.
+To use this service simply navigate to the website address below and press the "Generate Password" button to begin. 
 
 https://ahelmin.github.io/Password-Generator/
 
